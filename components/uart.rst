@@ -53,6 +53,7 @@ Configuration variables:
 - **baud_rate** (**Required**, int): The baud rate of the UART bus.
 - **tx_pin** (*Optional*, :ref:`config-pin`): The pin to send data to from the ESP's perspective. Use the full pin schema and set ``inverted: true`` to invert logic levels.
 - **rx_pin** (*Optional*, :ref:`config-pin`): The pin to receive data on from the ESP's perspective. Use the full pin schema and set ``inverted: true`` to invert logic levels.
+- **flow_control_pin** (*Optional*, :ref:`config-pin`): The pin used to for hardware RS485 flow control. When using this setting, half-duplex mode is enabled.
 - **rx_buffer_size** (*Optional*, int): The size of the buffer used for receiving UART messages. Increase if you use an integration that needs to read big payloads from UART. Defaults to ``256``.
 - **data_bits** (*Optional*, int): The number of data bits used on the UART bus. Options: 5 to 8. Defaults to 8.
 - **parity** (*Optional*): The parity used on the UART bus. Options: ``NONE``, ``EVEN``, ``ODD``. Defaults to ``NONE``.
@@ -79,6 +80,10 @@ The ESP32 has three UARTs. ESP32 lite variant chips (ESP32-S3, ESP32-C3, ESP32-S
 The ESP8266 has two UARTs; the second of which is TX-only. Only a limited set of pins can be used. ``UART0`` may
 use either ``tx_pin: GPIO1`` and ``rx_pin: GPIO3``, or ``tx_pin: GPIO15`` and ``rx_pin: GPIO13``. ``UART1`` must
 use ``tx_pin: GPIO2``. Any other combination of pins will result in use of a software UART.
+
+.. note::
+
+    The use of ``flow_control_pin`` requires hardware support. Currently only ESP32 is supported.
 
 .. note::
 
