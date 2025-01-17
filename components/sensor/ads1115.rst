@@ -101,7 +101,7 @@ Configuration variables:
 - All other options from :ref:`Sensor <config-sensor>`.
 
 Multiplexer, Gain and Sample rate
---------------------
+---------------------------------
 
 .. note::
 
