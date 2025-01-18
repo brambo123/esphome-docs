@@ -23,7 +23,7 @@ single-color E-Ink displays are implemented and of those only a few modules.
 
     Waveshare E-Paper 2.9 Inch E-Paper Display.
 
-The communication ESPHome has chosen to use for this integration is 4-wire :ref:`SPI <spi>`, as it's the most stable
+The communication ESPHome has chosen to use for this component is 4-wire :ref:`SPI <spi>`, as it's the most stable
 and high-speed. So you need to make sure your board is set to the 4-wire SPI mode and have an ``spi:`` section in your
 configuration.
 
@@ -83,6 +83,7 @@ Configuration variables:
 
   - ``1.54in``
   - ``1.54inv2``
+  - ``1.54inv2-b`` - Black/White/Red
   - ``2.13in`` - not tested
   - ``2.13in-ttgo`` - T5_V2.3 tested. Also works for Wemos D1 Mini ePaper Shield 2.13 1.0.0 "LOLIN"
   - ``2.13in-ttgo-b73`` - T5_V2.3 with B73 display tested
@@ -96,6 +97,7 @@ Configuration variables:
   - ``2.70in-b`` - Black/White/Red
   - ``2.70in-bv2`` - Black/White/Red
   - ``2.90in``
+  - ``2.90in-dke``
   - ``2.90inv2``
   - ``2.90inv2-r2`` - 2.9in V2 display, but with different initialization and full/partial display refresh management than ``2.90inv2`` 
   - ``2.90in-b`` - B/W rendering only
@@ -107,12 +109,14 @@ Configuration variables:
   - ``7.50in``
   - ``7.50in-bV2`` - also supports v3, B/W rendering only
   - ``7.50in-bV3`` - display with the '(V3)' sticker on the back, B/W rendering only
+  - ``7.50in-bV3-bwr`` - display with the '(V3)' sticker on the back, BWR rendering enabled (uses double the amount of RAM for the display buffer as B/W rendering)
   - ``7.50in-bc`` - display with version sticker '(C)' on the back, B/W rendering only
   - ``7.50inV2`` - Can't use with an ESP8266 as it runs out of RAM
   - ``7.50inV2alt`` (alternative version to the above ``7.50inV2``)
   - ``7.50in-hd-b`` - Can't use with an ESP8266 as it runs out of RAM
-  - ``gdey029t94`` - GooDisplay GDEY029T94, as used on the AdaFruit MagTag
+  - ``gdew029t5`` - GooDisplay GDEW029T5, as used on the AdaFruit MagTag (previously incorrectly referred to as GDEY029T94)
   - ``1.54in-m5coreink-m09`` - GoodDisplay gdew0154m09, as used in the M5Stack Core Ink
+  - ``13.3in-k`` - 13.3in, with the K model, 960x680, B/W rendering only
 
 .. warning::
 
